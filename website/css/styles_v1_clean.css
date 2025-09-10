@@ -1,0 +1,203 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #C5C6C7;
+    background-color: #0B0C30; /* Solid base color */
+    /* No background texture */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Section Styling */
+.section {
+    min-height: 100vh; /* Each section takes full viewport height */
+    display: flex;
+    align-items: center;
+    padding: 4rem 0; /* Add padding for content */
+}
+
+/* Background Colors */
+.bg-dark {
+    background-color: #0B0C30;
+}
+
+.bg-light {
+    background-color: #1F2833;
+}
+
+.text-primary {
+    color: #66FCF1;
+}
+
+.text-light {
+    color: #C5C6C7;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #0B0C30;
+    padding: 1rem 0;
+    position: fixed; /* Make header fixed */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure it's on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0; /* Remove default padding */
+}
+
+/* Text in Upper Left Corner */
+.upper-left-text {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #66FCF1;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.upper-left-text span {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px; /* Adjusted gap */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+nav a {
+    color: #C5C6C7;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5rem 1rem; /* Add some padding for better click area */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+nav a:hover {
+    color: #66FCF1;
+    background-color: rgba(102, 252, 241, 0.1); /* Subtle hover background */
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-placeholder {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.logo-placeholder img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    /* Enhanced shadow for material feel */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#hero h1 {
+    font-size: 4rem;
+    color: #66FCF1;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #66FCF1;
+    color: #0B0C30;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    cursor: pointer;
+    /* Enhanced shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: #45A29E;
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Features Section */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Enhanced shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* ... (rest of the styles remain the same) ... */
+/* Include all other styles from your previous full CSS here, from .feature-item i onwards */
+/* ... Installation Guide, User Guide, About Page, Footer, Responsive Design ... */
+/* For brevity, I'm showing the key changes. Paste your full previous CSS here and replace the shadows as shown. */
+
+/* --- SNIP: Paste the rest of your full CSS from the previous message here --- */
+/* (From .feature-item i { ... } down to the end, including responsive styles) */
+/* --- END SNIP --- */

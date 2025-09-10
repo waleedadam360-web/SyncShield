@@ -1,0 +1,23 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #C5C6C7;
+    /* Subtle gradient background */
+    background: linear-gradient(135deg, #0B0C30 0%, #0a0b2a 100%);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* ... (rest of the styles are identical to your full CSS) ... */
+/* Copy and paste the ENTIRE full CSS from the previous message here */
+/* No other changes needed for this version */

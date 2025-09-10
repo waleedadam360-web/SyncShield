@@ -1,0 +1,25 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #C5C6C7;
+    /* Base color with subtle dot texture */
+    background-color: #0B0C30;
+    background-image: radial-gradient(circle at 1px 1px, rgba(102, 252, 241, 0.05) 1px, transparent 0);
+    background-size: 20px 20px; /* Adjust spacing of dots */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* ... (rest of the styles are identical to your full CSS) ... */
+/* Copy and paste the ENTIRE full CSS from the previous message here */
+/* No other changes needed for this version */
