@@ -130,8 +130,6 @@ nav a:hover {
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    /* If you want a border similar to team photos */
-    /* border: 2px solid #66FCF1; */
 }
 
 #hero h1 {
@@ -206,37 +204,55 @@ nav a:hover {
     color: #C5C6C7;
 }
 
-/* Installation Guide */
+/* Installation Guide - NEW STYLE (Vertical List) */
 .install-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
     margin-top: 2rem;
 }
 
-.step {
+/* Guide List Styling (for Install & User Guide) */
+.guide-list {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.guide-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    padding: 12px 16px;
     background-color: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
     border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
-.step:hover {
+.guide-item:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-5px);
 }
 
-.step h3 {
-    font-size: 1.5rem;
-    color: #C5C6C7;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    margin-bottom: 1rem;
+.guide-line {
+    width: 4px;
+    height: 100%;
+    background-color: #66FCF1;
+    margin-right: 12px;
+    border-radius: 2px;
 }
 
-.step p {
-    font-size: 1rem;
-    color: #C5C6C7;
+.guide-item p {
+    margin: 0;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Code Highlighting */
+code {
+    font-family: 'Courier New', monospace;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
 }
 
 /* User Guide */
@@ -295,8 +311,7 @@ nav a:hover {
 .member-card img {
     width: 150px;
     height: 200px;
-    /* border-radius: 0; Removed for square, keep default (square) */
-    object-fit: cont;
+    object-fit: cover; /* Fixed typo: was 'cont' */
     margin-bottom: 1rem;
     border: 2px solid #66FCF1;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -357,7 +372,6 @@ footer p {
         padding-top: 1rem; /* Add padding to account for absolute text */
     }
 
-    /* Adjust text position on small screens if needed */
     .upper-left-text {
         top: 0.5rem;
         left: 0.5rem;
@@ -366,28 +380,25 @@ footer p {
 
     nav ul {
         flex-direction: column;
-        gap: 5px; /* Even smaller gap on mobile */
-        margin-top: 1rem; /* Add space below the text */
+        gap: 5px;
+        margin-top: 1rem;
     }
 
     nav a {
-        padding: 0.4rem 0.8rem; /* Adjust padding for mobile */
+        padding: 0.4rem 0.8rem;
     }
 
     #hero h1 {
         font-size: 2.5rem;
     }
 
-    .feature-grid, .install-steps {
-        grid-template-columns: 1fr;
-    }
-
+    .feature-grid,
     .team-members {
         grid-template-columns: 1fr;
     }
 
     .project-details {
-        grid-column: span 1; /* Reset span on small screens */
+        grid-column: span 1;
     }
 
     .screenshot-container {
@@ -397,5 +408,9 @@ footer p {
 
     .screenshot-container img {
         max-width: 100%;
+    }
+
+    .guide-list {
+        padding: 0 10px;
     }
 }
