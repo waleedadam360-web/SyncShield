@@ -1,4 +1,3 @@
-<!-- website/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,23 +15,22 @@
 </head>
 <body>
     <!-- Header with Navigation -->
-<header>
-    <div class="container">
-        <!-- Text Placeholder in Upper Left Corner (replaces SVG) -->
-        <div class="upper-left-text">
-            <span class="text-primary">{SyncShield}</span>
+    <header>
+        <div class="container">
+            <div class="upper-left-text">
+                <span class="text-primary">{SyncShield}</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#install">Install</a></li>
+                    <li><a href="#guide">Guide</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#install">Install</a></li>
-                <li><a href="#guide">Guide</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
 
     <!-- Hero Section -->
     <section id="hero" class="section bg-dark">
@@ -82,15 +80,53 @@
         </div>
     </section>
 
-    <!-- Installation Section (Simplified with one download button) -->
+    <!-- Installation Guide -->
     <section id="install" class="section bg-dark">
-        <div class="container text-center">
-            <h2 class="text-center text-light">Install SyncShield</h2>
-            <p class="text-light">Click the button below to download the latest version of SyncShield.</p>
-            <a href="https://github.com/username/SyncShield/releases/latest/download/SyncShield_Extension.zip" 
-               class="btn btn-primary">
-               Download Extension (.zip)
-            </a>
+        <div class="container">
+            <h2 class="text-center text-light">Install SyncShield Extension</h2>
+            
+            <!-- Download Button -->
+            <div class="text-center" style="margin-top: 20px; margin-bottom: 30px;">
+                <a href="https://github.com/waleedadam360-web/SyncShield/releases/latest/download/SyncShield_Extension.zip"
+                   class="btn btn-primary">
+                    Download Extension (.zip)
+                </a>
+            </div>
+
+            <!-- How to Install Steps -->
+            <div class="install-steps text-light">
+                <h3 class="text-center">How to Install</h3>
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <div class="guide-line"></div>
+                        <p>Download the <strong>SyncShield Extension</strong> using the button above.</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-line"></div>
+                        <p>Unzip the downloaded file to a folder on your computer.</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-line"></div>
+                        <p>Open your browser (Chrome / Edge / Brave).</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-line"></div>
+                        <p>Go to <code>chrome://extensions/</code> (or <strong>Extensions</strong> in browser settings).</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-line"></div>
+                        <p>Enable <strong>Developer mode</strong> (toggle at top-right).</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-line"></div>
+                        <p>Click <strong>Load unpacked</strong> and select the unzipped folder.</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-line"></div>
+                        <p>The SyncShield extension will now appear in your extensions list.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -114,46 +150,46 @@
     </section>
 
     <!-- About Section -->
-<section id="about" class="section bg-dark">
-    <div class="container">
-        <h2 class="text-center text-light">About Us</h2>
-        <div class="team-members">
-            <div class="member-card">
-                <img src="images/paeh.png" alt="MUHAMMAD NUR FAIZ BIN AHMAD FAUZI">
-                <h3>MUHAMMAD NUR FAIZ BIN AHMAD FAUZI</h3>
-                <p>Group Leader & Frontend Developer</p>
-                <p>Student ID: NWS23070251</p>
+    <section id="about" class="section bg-dark">
+        <div class="container">
+            <h2 class="text-center text-light">About Us</h2>
+            <div class="team-members">
+                <div class="member-card">
+                    <img src="images/paeh.png" alt="MUHAMMAD NUR FAIZ BIN AHMAD FAUZI">
+                    <h3>MUHAMMAD NUR FAIZ BIN AHMAD FAUZI</h3>
+                    <p>Group Leader & Frontend Developer</p>
+                    <p>Student ID: NWS23070251</p>
+                </div>
+                <div class="member-card">
+                    <img src="images/pip.jpg" alt="WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD">
+                    <h3>WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD</h3>
+                    <p>Command Scanner Developer</p>
+                    <p>Student ID: NWS23070157</p>
+                </div>
+                <div class="member-card">
+                    <img src="images/waleed.png" alt="WALEED ADAM BIN RIZA FAROUK">
+                    <h3>WALEED ADAM BIN RIZA FAROUK</h3>
+                    <p>Testing Lead & Documentation Writer</p>
+                    <p>Student ID: NWS23070265</p>
+                </div>
+                <div class="member-card">
+                    <img src="images/lia.jpg" alt="ROSHAZNE ELIA BINTI MOHD ROSHIDI">
+                    <h3>ROSHAZNE ELIA BINTI MOHD ROSHIDI</h3>
+                    <p>Researcher & Presentation Leader</p>
+                    <p>Student ID: NWS23070105</p>
+                </div>
             </div>
-            <div class="member-card">
-                <img src="images/pip.jpg" alt="WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD">
-                <h3>WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD</h3>
-                <p>Command Scanner Developer</p>
-                <p>Student ID: NWS23070157</p>
-            </div>
-            <div class="member-card">
-                <img src="images/waleed.png" alt="WALEED ADAM BIN RIZA FAROUK">
-                <h3>WALEED ADAM BIN RIZA FAROUK</h3>
-                <p>Testing Lead & Documentation Writer</p>
-                <p>Student ID: NWS23070265</p>
-            </div>
-            <div class="member-card">
-                <img src="images/lia.jpg" alt="ROSHAZNE ELIA BINTI MOHD ROSHIDI">
-                <h3>ROSHAZNE ELIA BINTI MOHD ROSHIDI</h3>
-                <p>Researcher & Presentation Leader</p>
-                <p>Student ID: NWS23070105</p>
-            </div>
-        </div>
 
-        <div class="project-details">
-            <h3>Project Details</h3>
-            <p><strong>Supervisor:</strong> Sir Amir Hakeem</p>
-            <p><strong>Intake:</strong> July 2023</p>
-            <p><strong>Trade:</strong> CID</p>
-            <p><strong>Final Year Project:</strong> FYP01 NWS129/23B</p>
-            <p><strong>Objective:</strong> To develop a browser extension that detects the CVE-2018-5764 vulnerability in Rsync commands.</p>
+            <div class="project-details">
+                <h3>Project Details</h3>
+                <p><strong>Supervisor:</strong> Sir Amir Hakeem</p>
+                <p><strong>Intake:</strong> July 2023</p>
+                <p><strong>Trade:</strong> CID</p>
+                <p><strong>Final Year Project:</strong> FYP01 NWS129/23B</p>
+                <p><strong>Objective:</strong> To develop a browser extension that detects the CVE-2018-5764 vulnerability in Rsync commands.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-dark">
