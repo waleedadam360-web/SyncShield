@@ -43,10 +43,13 @@ SyncShield helps users:
 ---
 
 ## 🧩 Project Structure
+
+```
 syncshield-github/
-├── website/ # Public-facing site: project info, download, demo
-├── extension/ # Browser extension source code (Chrome/Firefox)
-└── README.md # You are here!
+├── website/     # Public-facing site: project info, download, demo
+├── extension/   # Browser extension source code (Chrome/Firefox)
+└── README.md    # You are here!
+```
 
 ---
 
@@ -75,9 +78,77 @@ Provides immediate visual feedback with:
 
 ### 4. Mitigation Guidance
 Offers actionable fixes:
+
 ```bash
 # ❌ Unsafe
 rsync -av /src user@host:/dest
 
 # ✅ Safe
 rsync -av --protect-args /src user@host:/dest
+```
+
+---
+
+## 📖 Usage
+
+Once installed, you can start using SyncShield:
+
+1. Open the Extension  
+2. Click the Extensions icon in your browser  
+3. Select **SyncShield**  
+4. Paste your Rsync command:  
+
+   ```bash
+   rsync -av /src user@host:/dest
+   ```
+
+5. Run a Scan  
+   - **Local Scan** → checks immediately in your browser  
+   - **(Optional) Remote Scan** → test against a server (requires URL + token)
+
+---
+
+## 📦 Installation Guide
+
+Follow these steps to install **SyncShield** in your browser:
+
+1. **Download the Extension**  
+   👉 [Get SyncShield from our website](https://waleedadam360-web.github.io/SyncShield/)
+
+2. **Extract the Files**  
+   - Unzip the downloaded `.zip` file to a folder on your computer.
+
+3. **Open Browser Extensions Page**  
+   - **Chrome / Edge / Brave** → Go to `chrome://extensions/`  
+   - **Firefox** → Go to `about:debugging#/runtime/this-firefox`
+
+4. **Enable Developer Mode**  
+   - *Chrome/Edge/Brave*: Toggle the switch at the top-right.  
+   - *Firefox*: No toggle required.
+
+5. **Load the Extension**  
+   - *Chrome/Edge/Brave*: Click **Load unpacked** → Select the unzipped SyncShield folder.  
+   - *Firefox*: Click **Load Temporary Add-on** → Select the `manifest.json` file inside the SyncShield folder.
+
+6. **Installation Complete 🎉**  
+   - SyncShield will now appear in your extensions list and browser toolbar.
+
+---
+
+## 📦 Why Rsync Matters & Why SyncShield is Important
+
+### What is Rsync?
+Rsync is a powerful tool used to copy and synchronize files between computers. It’s popular because it’s fast, efficient, and saves bandwidth by only transferring changes instead of the whole file.
+
+### The Problem
+If Rsync is not used carefully, it can cause serious problems:
+- A wrong command could delete important files.
+- Attackers could abuse misconfigured Rsync servers to steal data.
+- Past security issues (like CVE-2018-5764) showed that Rsync can be exploited if not properly secured.
+
+### Why SyncShield?
+SyncShield helps by:
+- ✅ Checking Rsync commands before running them  
+- ✅ Warning users about dangerous options (like `--delete` or overwriting files)  
+- ✅ Giving safety tips to prevent data loss or attacks
+```
