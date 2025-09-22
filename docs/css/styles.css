@@ -6,7 +6,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Enable smooth scrolling */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
     line-height: 1.6;
     color: #C5C6C7;
     background-color: #0B0C30;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
 }
 
 .container {
@@ -25,10 +25,10 @@ body {
 
 /* Section Styling */
 .section {
-    min-height: 100vh; /* Each section takes full viewport height */
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 4rem 0; /* Add padding for content */
+    padding: 4rem 0;
 }
 
 /* Background Colors */
@@ -56,10 +56,10 @@ body {
 header {
     background-color: #0B0C30;
     padding: 1rem 0;
-    position: fixed; /* Make header fixed */
+    position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000; /* Ensure it's on top */
+    z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -67,10 +67,9 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0; /* Remove default padding */
+    padding: 0;
 }
 
-/* Text in Upper Left Corner */
 .upper-left-text {
     position: absolute;
     top: 1rem;
@@ -79,21 +78,16 @@ header .container {
     font-size: 1.2rem;
     font-weight: 700;
     color: #66FCF1;
-    z-index: 10; /* Ensure it's above other elements */
-}
-
-.upper-left-text span {
-    font-size: 1.2rem;
-    font-weight: 700;
+    z-index: 10;
 }
 
 /* Navigation */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px; /* Adjusted gap - you can change this value (e.g., 10px, 20px) */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    gap: 15px;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
@@ -102,13 +96,13 @@ nav a {
     font-weight: 500;
     transition: color 0.3s ease;
     font-family: 'Montserrat', sans-serif;
-    padding: 0.5rem 1rem; /* Add some padding for better click area */
-    border-radius: 4px; /* Slightly rounded corners */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
 nav a:hover {
     color: #66FCF1;
-    background-color: rgba(102, 252, 241, 0.1); /* Subtle hover background */
+    background-color: rgba(102, 252, 241, 0.1);
 }
 
 /* Hero Section */
@@ -116,20 +110,6 @@ nav a:hover {
     text-align: center;
     flex-direction: column;
     justify-content: center;
-}
-
-.logo-placeholder {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.logo-placeholder img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 #hero h1 {
@@ -161,7 +141,7 @@ nav a:hover {
 
 .btn:hover {
     background-color: #45A29E;
-    transform: translateY(-2px); /* Slight lift on hover */
+    transform: translateY(-2px);
 }
 
 /* Features Section */
@@ -204,12 +184,11 @@ nav a:hover {
     color: #C5C6C7;
 }
 
-/* Installation Guide - NEW STYLE (Vertical List) */
+/* Installation Guide */
 .install-steps {
     margin-top: 2rem;
 }
 
-/* Guide List Styling (for Install & User Guide) */
 .guide-list {
     margin-top: 20px;
     list-style: none;
@@ -286,7 +265,7 @@ code {
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* About Page (Team Members) */
+/* About Page */
 .team-members {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -300,7 +279,7 @@ code {
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s ease;
-    border: 1px solid rgba(102, 252, 241, 0.2); /* Subtle border */
+    border: 1px solid rgba(102, 252, 241, 0.2);
 }
 
 .member-card:hover {
@@ -332,7 +311,7 @@ code {
 }
 
 .project-details {
-    grid-column: span 4; /* Span full width on larger screens */
+    grid-column: span 4;
     background-color: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     border-radius: 8px;
@@ -369,7 +348,7 @@ footer p {
     header .container {
         flex-direction: column;
         gap: 10px;
-        padding-top: 1rem; /* Add padding to account for absolute text */
+        padding-top: 1rem;
     }
 
     .upper-left-text {
@@ -415,7 +394,7 @@ footer p {
     }
 }
 
-/* === NEW SECTION STYLES === */
+/* === FIXED SECTION STYLES === */
 
 .content-grid {
     display: flex;
@@ -438,15 +417,6 @@ footer p {
     overflow-x: auto;
     font-family: 'Courier New', monospace;
     font-size: 14px;
-}
-
-.example-code {
-    margin: 20px 0;
-    padding: 20px;
-    background: #f0f0f0;
-    color: #333;
-    border-left: 4px solid #007acc;
-    border-radius: 6px;
 }
 
 .alert-box {
@@ -478,39 +448,66 @@ footer p {
 .risk-item i {
     font-size: 2rem;
     margin-bottom: 10px;
+    color: #66FCF1;
 }
 
-.rating-card {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    max-width: 600px;
-    margin: 40px auto;
-    color: #333;
+/* === FIXED RISK CARD STYLE === */
+.risk-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.rating-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.risk-card i {
+    font-size: 2rem;
+    color: #66FCF1;
+    margin-bottom: 10px;
 }
 
-.badge {
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-weight: bold;
+.risk-card h3 {
+    color: #C5C6C7;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.badge-danger {
-    background-color: #dc3545;
-    color: white;
+.risk-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.risk-card li {
+    margin: 8px 0;
+    color: #C5C6C7;
+    font-size: 0.9rem;
 }
 
 .score {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #dc3545;
+}
+
+/* === Center Network Diagram === */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    width: 100%;
+}
+
+.image-container img {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: block;
+    margin: 0 auto;
 }
