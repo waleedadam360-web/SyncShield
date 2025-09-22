@@ -63,8 +63,6 @@ SyncShield/
 View the official project website at:  
 👉 **https://waleedadam360-web.github.io/SyncShield/**
 
-> 💡 *Note: You must enable GitHub Pages in repo Settings → Pages → Branch: `main` → Folder: `/website`*
-
 ---
 
 ## 🛠️ Key Features
