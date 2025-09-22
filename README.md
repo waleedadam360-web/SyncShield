@@ -1,4 +1,9 @@
+<p align="center">
+  <img src="docs/images/logo.png" alt="SyncShield Logo" width="120">
+</p>
+
 # 🔐 SyncShield — Browser Extension for CVE-2018-5764 Detection
+
 
 > **Detect unsafe Rsync commands before they become exploits**
 
