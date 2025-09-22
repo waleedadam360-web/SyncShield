@@ -45,10 +45,15 @@ SyncShield helps users:
 ## 🧩 Project Structure
 
 ```
-syncshield-github/
-├── website/     # Public-facing site: project info, download, demo
-├── extension/   # Browser extension source code (Chrome/Firefox)
-└── README.md    # You are here!
+SyncShield/
+├── docs/       # Extension and Website source code
+│   ├── css   
+│   ├── images
+│   ├── js
+│   ├── extension   # Extension folder
+│   └── index.html   # Website source code
+├── LICENSE          # MIT License file
+└── README.md        # You are here
 ```
 
 ---
