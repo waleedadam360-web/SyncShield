@@ -16,10 +16,10 @@ A lightweight, privacy-focused browser extension developed as part of **Final Ye
 
 | No. | Name                                | Student ID    | Role & Responsibilities                          |
 |-----|-------------------------------------|---------------|--------------------------------------------------|
-| 1   | Muhammad Nur Faiz Bin Ahmad Fauzi   | NWS23070251   | Group Leader & Frontend Developer                |
-| 2   | Wan Muhammad Afifuddin Bin Wan Ahmad| NWS23070157   | Command Scanner Developer                        |
-| 3   | Waleed Adam Bin Riza Farouk         | NWS23070265   | Testing Lead & Documentation Writer              |
-| 4   | Roshazne Elia Binti Mohd Roshidi    | NWS23070105   | Researcher & Presentation Leader                 |
+| 1   | Muhammad Nur Faiz Bin Ahmad Fauzi   | NWS23070251   | Project Manager & Testing Lead                   |
+| 2   | Wan Muhammad Afifuddin Bin Wan Ahmad| NWS23070157   | Backend & Functionality Developer                |
+| 3   | Waleed Adam Bin Riza Farouk         | NWS23070265   | Frontend & UI/UX Developer                       |
+| 4   | Roshazne Elia Binti Mohd Roshidi    | NWS23070105   | Security Analyst & Resource Coordinator          |
 
 **Supervisor**: Sir Amir Hakeem  
 **Intake**: July 2023 | **Trade**: CID (Computer Information & Data)  
@@ -33,9 +33,9 @@ A lightweight, privacy-focused browser extension developed as part of **Final Ye
 Rsync is a powerful utility for file synchronization — but if misconfigured (especially without `--protect-args`), it can lead to **remote command execution** via specially crafted filenames or arguments (CVE-2018-5764).
 
 SyncShield helps users:
-- ✅ Paste or upload Rsync commands/scripts
-- ✅ Instantly detect unsafe patterns (missing `--protect-args`, unquoted inputs, etc.)
-- ✅ Get clear, non-technical alerts and mitigation steps
+- ✅ Paste or upload Rsync commands/scripts  
+- ✅ Instantly detect unsafe patterns (missing `--protect-args`, unquoted inputs, etc.)  
+- ✅ Get clear, non-technical alerts and mitigation steps  
 - ✅ Learn secure Rsync practices — no CLI expertise required
 
 > ⚠️ **Scope**: Focused only on CVE-2018-5764 — simple, targeted, and achievable within academic timeline.
@@ -44,7 +44,7 @@ SyncShield helps users:
 
 ## 🧩 Project Structure
 
-```
+```plaintext
 SyncShield/
 ├── docs/       # Extension and Website source code
 │   ├── css   
@@ -61,7 +61,7 @@ SyncShield/
 ## 🌐 Live Demo (GitHub Pages)
 
 View the official project website at:  
-👉 **[https://waleedadam360-web.github.io/SyncShield/](https://waleedadam360-web.github.io/SyncShield/)**
+👉 **https://waleedadam360-web.github.io/SyncShield/**
 
 > 💡 *Note: You must enable GitHub Pages in repo Settings → Pages → Branch: `main` → Folder: `/website`*
 
@@ -103,9 +103,9 @@ Once installed, you can start using SyncShield:
 3. Select **SyncShield**  
 4. Paste your Rsync command:  
 
-   ```bash
-   rsync -av /src user@host:/dest
-   ```
+```bash
+rsync -av /src user@host:/dest
+```
 
 5. Run a Scan  
    - **Local Scan** → checks immediately in your browser  
@@ -147,8 +147,8 @@ Rsync is a powerful tool used to copy and synchronize files between computers. I
 
 ### The Problem
 If Rsync is not used carefully, it can cause serious problems:
-- A wrong command could delete important files.
-- Attackers could abuse misconfigured Rsync servers to steal data.
+- A wrong command could delete important files.  
+- Attackers could abuse misconfigured Rsync servers to steal data.  
 - Past security issues (like CVE-2018-5764) showed that Rsync can be exploited if not properly secured.
 
 ### Why SyncShield?
@@ -156,4 +156,50 @@ SyncShield helps by:
 - ✅ Checking Rsync commands before running them  
 - ✅ Warning users about dangerous options (like `--delete` or overwriting files)  
 - ✅ Giving safety tips to prevent data loss or attacks
-```
+
+---
+
+## 🧭 User Guide
+
+### 1. Launch SyncShield
+- Launch SyncShield from your browser’s extensions menu.  
+- You’ll see three tabs: **Command Scan**, **History**, and **Info**.  
+- **Default tab:** **Command Scan**
+
+### 2. Enter Your Rsync Command
+- Paste or type an `rsync` command into the **Rsync Command** box.  
+- If the command is invalid or incomplete, SyncShield will warn you:  
+  ⚠️ “This does not look like an rsync command.”  
+- Actions:  
+  - Click **🔍 Local Scan** to analyze it for unsafe patterns.  
+  - Click **✨ Generate Safe** to automatically rewrite the command with `--protect-args` and other secure practices.
+
+### 3. Build a Command (Optional)
+- Not sure about syntax? Use the **Command Builder**:  
+  - **Source:** Path to source files (e.g. `/path/to/source`)  
+  - **Destination:** Target location (e.g. `user@host:/path/to/dest`)  
+  - **Options available:**  
+    - `-a` Archive  
+    - `-v` Verbose  
+    - `-z` Compress  
+    - `--progress` Show progress  
+    - `--checksum` Verify integrity  
+- Click **⚡ Build Secure Command** to auto-generate a safe version.
+
+### 4. Scan with Remote Server (Optional)
+- Validate with a remote host (optional). *(This feature may require additional setup such as a URL and an access token — only use with trusted hosts.)*
+
+### 5. Review the Results
+- After scanning, review:  
+  - Whether the command is **Safe** or **Unsafe**  
+  - Warnings, explanations, and the impact summary  
+  - Suggested fixes and a **Suggested Safe Command**  
+- Actions available:  
+  - **Copy** the secure command to clipboard  
+  - **Export** the scan results as a file for documentation
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.
