@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="icon" href="images/icon.png" sizes="any">
     <title>SyncShield - Secure Your Rsync Commands</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/styles_v2_dots.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     <!-- Header with Navigation -->
@@ -27,6 +30,11 @@
                     <li><a href="#install">Install</a></li>
                     <li><a href="#guide">Guide</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#rsync">What is Rsync?</a></li>
+                    <li><a href="#cve">CVE-2018-5764</a></li>
+                    <li><a href="#network">Network Diagram</a></li>
+                    <li><a href="#risks">Risks & Threats</a></li>
+                    <li><a href="#security">Security Rating</a></li>
                 </ul>
             </nav>
         </div>
@@ -187,6 +195,122 @@
                 <p><strong>Trade:</strong> CID</p>
                 <p><strong>Final Year Project:</strong> FYP01 NWS129/23B</p>
                 <p><strong>Objective:</strong> To develop a browser extension that detects the CVE-2018-5764 vulnerability in Rsync commands.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rsync Explanation -->
+    <section id="rsync" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center">What is Rsync?</h2>
+            <p class="text-light">Rsync is a powerful utility for file synchronization between systems, commonly used for backups, mirroring, and remote transfers.</p>
+            <div class="content-grid">
+                <div class="content-item">
+                    <h3>Key Features of Rsync</h3>
+                    <ul>
+                        <li>Fast, incremental backups</li>
+                        <li>Works over SSH or network</li>
+                        <li>Preserves permissions, timestamps, and ownership</li>
+                        <li>Supports compression and encryption</li>
+                    </ul>
+                </div>
+                <div class="content-item">
+                    <h3>Basic Syntax</h3>
+                    <pre class="code-block"><code>rsync -av /source/ user@host:/destination/</code></pre>
+                    <p><strong>-a:</strong> Archive mode (preserves permissions, etc.)<br>
+                       <strong>-v:</strong> Verbose output</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CVE Explanation -->
+    <section id="cve" class="section bg-dark">
+        <div class="container">
+            <h2 class="text-center text-primary">CVE-2018-5764: Remote Command Execution</h2>
+            <p class="text-light">This vulnerability occurs when Rsync is executed without the <code>--protect-args</code> flag. If user input contains shell metacharacters, it can be interpreted as commands on the destination server.</p>
+            <div class="alert-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p><strong>Danger:</strong> An attacker could execute arbitrary commands remotely, potentially gaining full control of the server.</p>
+            </div>
+            <div class="example-code">
+                <h3>Unsafe Command</h3>
+                <pre><code>rsync -av /src user@host:/dest</code></pre>
+                <p>⚠️ Missing <code>--protect-args</code> → Risk of command injection</p>
+            </div>
+            <div class="example-code">
+                <h3>Secure Command</h3>
+                <pre><code>rsync -av --protect-args /src user@host:/dest</code></pre>
+                <p>✅ With <code>--protect-args</code> → Safe transfer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network Diagram -->
+    <section id="network" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center">Network Diagram</h2>
+            <p class="text-light">How Rsync works between source and destination servers — and where the risk lies.</p>
+            <div class="image-container">
+                <img src="images/network-diagram.png" alt="Rsync Network Diagram" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            </div>
+            <div class="text-center" style="margin-top: 20px;">
+                <p><strong>Source Client:</strong> Sends Rsync command to destination server<br>
+                   <strong>Network:</strong> Transmits data securely via SSH<br>
+                   <strong>Destination Server:</strong> Executes received commands</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risks & Threats -->
+    <section id="risks" class="section bg-dark">
+        <div class="container">
+            <h2 class="text-center text-primary">Potential Risks & Threats</h2>
+            <p class="text-light">If not properly secured, Rsync can lead to serious security breaches.</p>
+            <div class="risk-grid">
+                <div class="risk-item">
+                    <i class="fas fa-bug text-danger"></i>
+                    <h3>Remote Command Execution</h3>
+                    <p>An attacker can run any command on the destination server, including deleting files, installing malware, or stealing data.</p>
+                </div>
+                <div class="risk-item">
+                    <i class="fas fa-shield-alt text-warning"></i>
+                    <h3>Data Integrity Loss</h3>
+                    <p>Malicious commands can corrupt or delete critical system files during sync.</p>
+                </div>
+                <div class="risk-item">
+                    <i class="fas fa-user-secret text-danger"></i>
+                    <h3>Privilege Escalation</h3>
+                    <p>If the Rsync process runs with elevated privileges, attackers can gain root access.</p>
+                </div>
+                <div class="risk-item">
+                    <i class="fas fa-lock text-warning"></i>
+                    <h3>Denial of Service (DoS)</h3>
+                    <p>Attackers can flood the server with commands, making it unresponsive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Rating -->
+    <section id="security" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center">Security Rating & Base Score</h2>
+            <p class="text-light">Based on the National Vulnerability Database (NVD), here's the official severity rating for CVE-2018-5764.</p>
+            <div class="rating-card">
+                <div class="rating-header">
+                    <h3>CVE-2018-5764</h3>
+                    <span class="badge badge-danger">High Severity</span>
+                </div>
+                <div class="rating-body">
+                    <p><strong>CVSS Base Score:</strong> <span class="score">7.8</span> (High)</p>
+                    <p><strong>Vector String:</strong> CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</p>
+                    <p><strong>Impact:</strong> High Confidentiality, Integrity, Availability</p>
+                    <p><strong>Exploitability:</strong> Easy to exploit via malformed input</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 20px;">
+                <p><small>Source: <a href="https://nvd.nist.gov/vuln/detail/CVE-2018-5764" target="_blank" style="color: #66FCF1;">NVD.gov</a></small></p>
             </div>
         </div>
     </section>
