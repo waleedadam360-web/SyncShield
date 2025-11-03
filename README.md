@@ -65,8 +65,7 @@ SyncShield/
 
 ## 🌐 Live Demo (GitHub Pages)
 
-View the official project website at:  
-👉 **https://waleedadam360-web.github.io/SyncShield/**
+🌐 Live Demo: [https://syncshield.my](https://syncshield.my)
 
 ---
 
