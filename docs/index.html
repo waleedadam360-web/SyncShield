@@ -242,16 +242,31 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark">
-    <div class="container">
-      <p class="text-light">&copy; 2025 SyncShield Team (GMI). All rights reserved.</p>
-      <p class="text-light">
-        <a href="https://github.com/waleedadam360-web/SyncShield" target="_blank" style="color:#66FCF1;text-decoration:none;">
-          <i class="fab fa-github"></i> View Source on GitHub
-        </a>
-      </p>
-    </div>
-  </footer>
+<!-- Footer -->
+<footer class="bg-dark">
+  <div class="container">
+    <p class="text-light">&copy; 2025 SyncShield Team (GMI). All rights reserved.</p>
+    <p class="text-light">
+      <a href="https://github.com/waleedadam360-web/SyncShield"
+         target="_blank"
+         style="color:#66FCF1;text-decoration:none;">
+        <i class="fab fa-github"></i> View Source on GitHub
+      </a>
+    </p>
+  </div>
+</footer>
+
+<!-- Scroll Animation Script -->
+<script>
+document.addEventListener("scroll", () => {
+  const cards = document.querySelectorAll(".guide-card");
+  const trigger = window.innerHeight * 0.85;
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if (top < trigger) card.classList.add("show");
+  });
+});
+</script>
 </body>
 </html>
+
