@@ -1,280 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/icon.png" sizes="any">
-    <title>SyncShield - Secure Your Rsync Commands</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="images/icon.png" sizes="any" />
+  <title>SyncShield - Secure Your Rsync Commands</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
-    <!-- Header with Navigation -->
-    <header>
-        <div class="container">
-            <div class="upper-left-text">
-                <span class="text-primary">{SyncShield}</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#rsync">Rsync & CVE</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#install">Install</a></li>
-                    <li><a href="#guide">User Guide</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero" class="section bg-dark">
-        <div class="container">
-            <h1 class="text-primary">{SyncShield}</h1>
-            <p class="text-light">Detect CVE-2018-5764 Vulnerabilities Locally in Rsync Commands</p>
-            <a href="#install" class="btn btn-primary">Install Extension</a>
-        </div>
-    </section>
-
-    <!-- Rsync & CVE Section -->
-    <section id="rsync" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center text-primary">Rsync & CVE-2018-5764</h2>
-            <p class="text-light text-center">Understand how Rsync works — and why missing <code>--protect-args</code> can lead to remote command execution.</p>
-
-            <!-- What is Rsync -->
-            <div class="content-grid">
-                <div class="content-item">
-                    <h3>What is Rsync?</h3>
-                    <p>Rsync is a powerful utility for file synchronization between systems, commonly used for backups, mirroring, and remote transfers.</p>
-                    <pre class="code-block"><code>rsync -av /source/ user@host:/destination/</code></pre>
-                    <p><strong>-a:</strong> Archive mode (preserves permissions, etc.)<br><strong>-v:</strong> Verbose output</p>
-                </div>
-                <div class="content-item">
-                    <h3>CVE-2018-5764 Explained</h3>
-                    <p>This vulnerability occurs when Rsync is executed without <code>--protect-args</code>. User input can be interpreted as shell commands on the destination server.</p>
-                    <div class="alert-box">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <p><strong>Danger:</strong> Remote command execution → full server control</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Command Examples -->
-            <div class="risk-grid" style="margin-top: 40px;">
-                <div class="risk-item">
-                    <i class="fas fa-exclamation-triangle text-danger"></i>
-                    <h3>Unsafe Command</h3>
-                    <pre class="code-block"><code>rsync -av /src user@host:/dest</code></pre>
-                    <p>⚠️ Missing <code>--protect-args</code> → Risk of command injection</p>
-                </div>
-                <div class="risk-item">
-                    <i class="fas fa-check-circle text-success"></i>
-                    <h3>Secure Command</h3>
-                    <pre class="code-block"><code>rsync -av --protect-args /src user@host:/dest</code></pre>
-                    <p>✅ With <code>--protect-args</code> → Safe transfer</p>
-                </div>
-            </div>
-
-            <!-- Network Diagram -->
-            <h3 class="text-center" style="margin-top: 60px; margin-bottom: 20px;">Network Diagram</h3>
-            <div class="image-container">
-                <img src="images/network-diagram.png" alt="Rsync Network Diagram">
-            </div>
-            <div class="text-center" style="margin-top: 20px;">
-                <p><strong>Source Client:</strong> Sends Rsync command to destination server<br>
-                <strong>Network:</strong> Transmits data securely via SSH<br>
-                <strong>Destination Server:</strong> Executes received commands</p>
-            </div>
-
-            <!-- Risks & Security Rating -->
-            <div class="risk-container" style="margin-top: 40px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-                <div class="risk-card">
-                    <i class="fas fa-bug text-danger"></i>
-                    <h3>Potential Risks</h3>
-                    <ul>
-                        <li>Remote Command Execution</li>
-                        <li>Data Integrity Loss</li>
-                        <li>Privilege Escalation</li>
-                        <li>Denial of Service (DoS)</li>
-                    </ul>
-                </div>
-                <div class="risk-card">
-                    <i class="fas fa-shield-alt text-primary"></i>
-                    <h3>Security Rating</h3>
-                    <p><strong>CVSS Base Score:</strong> <span class="score">7.8</span> (High)<br><em>Based on related CVE-2018-5763 impact</em></p>
-                    <p style="font-size: 0.8rem; color: #C5C6C7;">Source: <a href="https://nvd.nist.gov/vuln/detail/CVE-2018-5764" target="_blank" style="color: #66FCF1;">NVD.gov</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="section bg-dark">
-        <div class="container">
-            <h2 class="text-center">Key Features</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <i class="fas fa-shield-alt text-primary"></i>
-                    <h3>Rsync Argument Analyzer</h3>
-                    <p>Checks for the absence of --protect-args and other unsafe patterns.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-exclamation-triangle text-primary"></i>
-                    <h3>Detection of Unsafe Input Patterns</h3>
-                    <p>Identifies potentially dangerous usage patterns that could lead to command injection.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-bell text-primary"></i>
-                    <h3>Real-Time Alerts</h3>
-                    <p>Provides instant feedback on command safety.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-tools text-primary"></i>
-                    <h3>Mitigation Guidance</h3>
-                    <p>Offers clear steps to fix vulnerabilities.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-download text-primary"></i>
-                    <h3>Offline Usage</h3>
-                    <p>All scans are performed locally without internet access.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-user-friends text-primary"></i>
-                    <h3>User-Friendly Interface</h3>
-                    <p>Simple and intuitive dashboard for easy use.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Installation Guide -->
-    <section id="install" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center">Install SyncShield Extension</h2>
-            
-            <!-- Download Button -->
-            <div class="text-center" style="margin-top: 20px; margin-bottom: 30px;">
-                <a href="https://github.com/waleedadam360-web/SyncShield/releases/latest/download/SyncShield_v1.2.zip"
-                   class="btn btn-primary">
-                    Download SyncShield (.zip)
-                </a>
-
-            <!-- How to Install Steps -->
-            <div class="install-steps text-light">
-                <h3 class="text-center">How to Install</h3>
-                <div class="guide-list">
-                    <div class="guide-item">
-                        <div class="guide-line"></div>
-                        <p>Download the <strong>SyncShield Extension</strong> using the button above.</p>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-line"></div>
-                        <p>Unzip the downloaded file to a folder on your computer.</p>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-line"></div>
-                        <p>Open your browser (Chrome / Edge / Brave).</p>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-line"></div>
-                        <p>Go to <code>chrome://extensions/</code> (or <strong>Extensions</strong> in browser settings).</p>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-line"></div>
-                        <p>Enable <strong>Developer mode</strong> (toggle at top-right).</p>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-line"></div>
-                        <p>Click <strong>Load unpacked</strong> and select the unzipped folder.</p>
-                    </div>
-                    <div class="guide-item">
-                        <div class="guide-line"></div>
-                        <p>The SyncShield extension will now appear in your extensions list.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- User Guide -->
-    <section id="guide" class="section bg-dark">
-        <div class="container">
-            <h2 class="text-center">User Guide</h2>
-            <p class="text-light">Learn how to use SyncShield effectively.</p>
-            <ul>
-                <li>Paste your Rsync command into the input field.</li>
-                <li>Click "Local Scan" to analyze the command.</li>
-                <li>If vulnerabilities are found, review the issues and suggested fixes.</li>
-                <li>Click "Copy Fix" to copy the recommended safe command.</li>
-                <li>Click "Export Results" to save the scan details as a JSON file.</li>
-            </ul>
-            <div class="screenshot-container">
-                <img src="images/screenshot_safe.png" alt="Safe Command Screenshot">
-                <img src="images/screenshot_unsafe.png" alt="Unsafe Command Screenshot">
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center">About Us</h2>
-            <div class="team-members">
-                <div class="member-card">
-                    <img src="images/paeh.png" alt="MUHAMMAD NUR FAIZ BIN AHMAD FAUZI">
-                    <h3>MUHAMMAD NUR FAIZ BIN AHMAD FAUZI</h3>
-                    <p>Group Leader & Frontend Developer</p>
-                    <p>Student ID: NWS23070251</p>
-                </div>
-                <div class="member-card">
-                    <img src="images/pip.jpg" alt="WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD">
-                    <h3>WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD</h3>
-                    <p>Command Scanner Developer</p>
-                    <p>Student ID: NWS23070157</p>
-                </div>
-                <div class="member-card">
-                    <img src="images/waleed.png" alt="WALEED ADAM BIN RIZA FAROUK">
-                    <h3>WALEED ADAM BIN RIZA FAROUK</h3>
-                    <p>Testing Lead & Documentation Writer</p>
-                    <p>Student ID: NWS23070265</p>
-                </div>
-                <div class="member-card">
-                    <img src="images/lia.jpg" alt="ROSHAZNE ELIA BINTI MOHD ROSHIDI">
-                    <h3>ROSHAZNE ELIA BINTI MOHD ROSHIDI</h3>
-                    <p>Researcher & Presentation Leader</p>
-                    <p>Student ID: NWS23070105</p>
-                </div>
-            </div>
-
-            <div class="project-details">
-                <h3>Project Details</h3>
-                <p><strong>Supervisor:</strong> Sir Amir Hakeem</p>
-                <p><strong>Intake:</strong> July 2023</p>
-                <p><strong>Trade:</strong> CID</p>
-                <p><strong>Final Year Project:</strong> FYP01 NWS129/23B</p>
-                <p><strong>Objective:</strong> To develop a browser extension that detects the CVE-2018-5764 vulnerability in Rsync commands.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark">
+  <!-- Header -->
+  <header>
     <div class="container">
-        <p class="text-light">&copy; 2025 SyncShield Team (GMI). All rights reserved.</p>
-        <p class="text-light">
-            <a href="https://github.com/waleedadam360-web/SyncShield" target="_blank" style="color: #66FCF1; text-decoration: none;">
-                <i class="fab fa-github"></i> View Source on GitHub
-            </a>
-        </p>
+      <div class="upper-left-text"><span class="text-primary">{SyncShield}</span></div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#rsync">Rsync & CVE</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#install">Install</a></li>
+          <li><a href="#guide">User Guide</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
     </div>
-</footer>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="section bg-dark">
+    <div class="container">
+      <h1 class="text-primary">{SyncShield}</h1>
+      <p class="text-light">Detect CVE-2018-5764 Vulnerabilities Locally in Rsync Commands</p>
+      <a href="#install" class="btn btn-primary">Install Extension</a>
+    </div>
+  </section>
+
+  <!-- Rsync Section -->
+  <section id="rsync" class="section bg-light">
+    <div class="container">
+      <h2 class="text-center text-primary">Rsync & CVE-2018-5764</h2>
+      <p class="text-light text-center">Understand how Rsync works — and why missing <code>--protect-args</code> can lead to remote command execution.</p>
+
+      <div class="content-grid">
+        <div class="content-item">
+          <h3>What is Rsync?</h3>
+          <p>Rsync is a powerful utility for file synchronization between systems, commonly used for backups, mirroring, and remote transfers.</p>
+          <pre class="code-block"><code>rsync -av /source/ user@host:/destination/</code></pre>
+          <p><strong>-a:</strong> Archive mode<br><strong>-v:</strong> Verbose output</p>
+        </div>
+        <div class="content-item">
+          <h3>CVE-2018-5764 Explained</h3>
+          <p>This vulnerability occurs when Rsync is executed without <code>--protect-args</code>. User input can be interpreted as shell commands on the destination server.</p>
+          <div class="alert-box">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p><strong>Danger:</strong> Remote command execution → full server control</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="risk-grid">
+        <div class="risk-item">
+          <i class="fas fa-exclamation-triangle text-danger"></i>
+          <h3>Unsafe Command</h3>
+          <pre class="code-block"><code>rsync -av /src user@host:/dest</code></pre>
+          <p>⚠️ Missing <code>--protect-args</code> → Risk of command injection</p>
+        </div>
+        <div class="risk-item">
+          <i class="fas fa-check-circle text-success"></i>
+          <h3>Secure Command</h3>
+          <pre class="code-block"><code>rsync -av --protect-args /src user@host:/dest</code></pre>
+          <p>✅ With <code>--protect-args</code> → Safe transfer</p>
+        </div>
+      </div>
+
+      <h3 class="text-center">Network Diagram</h3>
+      <div class="image-container">
+        <img src="images/network-diagram.png" alt="Rsync Network Diagram" />
+      </div>
+
+      <div class="text-center">
+        <p><strong>Source Client:</strong> Sends Rsync command<br><strong>Network:</strong> Transmits securely via SSH<br><strong>Destination:</strong> Executes received commands</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section bg-dark">
+    <div class="container">
+      <h2 class="text-center">Key Features</h2>
+      <div class="feature-grid">
+        <div class="feature-item"><i class="fas fa-shield-alt text-primary"></i><h3>Rsync Argument Analyzer</h3><p>Checks for unsafe patterns and missing flags.</p></div>
+        <div class="feature-item"><i class="fas fa-bell text-primary"></i><h3>Real-Time Alerts</h3><p>Instant feedback on command safety.</p></div>
+        <div class="feature-item"><i class="fas fa-tools text-primary"></i><h3>Mitigation Guidance</h3><p>Provides steps to fix vulnerabilities.</p></div>
+        <div class="feature-item"><i class="fas fa-download text-primary"></i><h3>Offline Usage</h3><p>Runs locally without internet access.</p></div>
+        <div class="feature-item"><i class="fas fa-user-friends text-primary"></i><h3>User-Friendly Interface</h3><p>Simple and intuitive dashboard.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Install -->
+  <section id="install" class="section bg-light">
+    <div class="container">
+      <h2 class="text-center">Install SyncShield Extension</h2>
+      <div class="text-center">
+        <a href="https://github.com/waleedadam360-web/SyncShield/releases/latest/download/SyncShield_v1.2.zip" class="btn btn-primary">Download SyncShield (.zip)</a>
+      </div>
+      <div class="install-steps text-light">
+        <h3 class="text-center">How to Install</h3>
+        <ul>
+          <li>Download the <strong>SyncShield Extension</strong> using the button above.</li>
+          <li>Unzip the file on your computer.</li>
+          <li>Open your browser and go to <code>chrome://extensions/</code>.</li>
+          <li>Enable <strong>Developer mode</strong> and click <strong>Load unpacked</strong>.</li>
+          <li>Select the extracted folder to install.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide -->
+  <section id="guide" class="section bg-dark">
+    <div class="container">
+      <h2 class="text-center text-primary">How to Use SyncShield Extension</h2>
+      <p class="text-light text-center">Build secure <code>rsync</code> commands with protection against argument injection.</p>
+
+      <div class="guide-steps">
+        <div class="guide-step"><i class="fas fa-plug text-primary"></i><h3>1. Launch the Extension</h3><p>Click the SyncShield icon in your browser toolbar.</p></div>
+        <div class="guide-step"><i class="fas fa-terminal text-primary"></i><h3>2. Open the Command Builder</h3><p>Switch to the Command Builder tab to start creating a command.</p></div>
+        <div class="guide-step"><i class="fas fa-folder-open text-primary"></i><h3>3. Set Source & Destination</h3><p>Example: <code>/home/kali/Desktop/project/</code> → <code>user@192.168.1.105:/backup/</code></p></div>
+        <div class="guide-step"><i class="fas fa-shield-alt text-primary"></i><h3>4. Enable Security Flags</h3><p>✅ <code>--protect-args</code> ✅ <code>-avz</code> ✅ <code>--rsync-path="sudo rsync"</code></p></div>
+        <div class="guide-step"><i class="fas fa-code text-primary"></i><h3>5. Preview Command</h3><pre class="code-block"><code>rsync -avz --protect-args /data/ user@192.168.1.100:/secure_backup/</code></pre></div>
+        <div class="guide-step"><i class="fas fa-copy text-primary"></i><h3>6. Copy or Execute</h3><p>Copy it to your terminal or send for backend verification.</p></div>
+        <div class="guide-step"><i class="fas fa-exclamation-triangle text-danger"></i><h3>7. Receive Alerts</h3><p>Warnings appear instantly for unsafe or missing parameters.</p></div>
+      </div>
+
+      <div class="alert-box">
+        <i class="fas fa-lightbulb text-primary"></i>
+        <p><strong>Tip:</strong> Always use <code>--protect-args</code> to prevent injection attacks.</p>
+      </div>
+
+      <div class="screenshot-container">
+        <img src="images/command_builder_ui.png" alt="Command Builder Interface" />
+        <img src="images/security_alert_ui.png" alt="Security Alert Example" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section bg-light">
+    <div class="container">
+      <h2 class="text-center">About Us</h2>
+      <div class="team-members">
+        <div class="member-card"><img src="images/paeh.png" alt="MUHAMMAD NUR FAIZ BIN AHMAD FAUZI"/><h3>MUHAMMAD NUR FAIZ BIN AHMAD FAUZI</h3><p>Group Leader & Frontend Developer</p><p>ID: NWS23070251</p></div>
+        <div class="member-card"><img src="images/pip.jpg" alt="WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD"/><h3>WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD</h3><p>Command Scanner Developer</p><p>ID: NWS23070157</p></div>
+        <div class="member-card"><img src="images/waleed.png" alt="WALEED ADAM BIN RIZA FAROUK"/><h3>WALEED ADAM BIN RIZA FAROUK</h3><p>Testing Lead & Documentation Writer</p><p>ID: NWS23070265</p></div>
+        <div class="member-card"><img src="images/lia.jpg" alt="ROSHAZNE ELIA BINTI MOHD ROSHIDI"/><h3>ROSHAZNE ELIA BINTI MOHD ROSHIDI</h3><p>Researcher & Presentation Leader</p><p>ID: NWS23070105</p></div>
+      </div>
+      <div class="project-details">
+        <h3>Project Details</h3>
+        <p><strong>Supervisor:</strong> Sir Amir Hakeem</p>
+        <p><strong>Intake:</strong> July 2023</p>
+        <p><strong>Trade:</strong> CID</p>
+        <p><strong>FYP:</strong> FYP01 NWS129/23B</p>
+        <p><strong>Objective:</strong> Develop a browser extension that detects CVE-2018-5764 vulnerabilities in Rsync commands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark">
+    <div class="container">
+      <p class="text-light">&copy; 2025 SyncShield Team (GMI). All rights reserved.</p>
+      <p class="text-light">
+        <a href="https://github.com/waleedadam360-web/SyncShield" target="_blank" style="color:#66FCF1;text-decoration:none;">
+          <i class="fab fa-github"></i> View Source on GitHub
+        </a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
