@@ -65,7 +65,7 @@ SyncShield/
 
 ## 🌐 Live Demo (GitHub Pages)
 
-🌐 Live Demo: [https://syncshield.my](https://syncshield.my)
+[https://syncshield.my](https://syncshield.my)
 
 ---
 
