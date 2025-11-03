@@ -10,12 +10,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
 </head>
 <body>
+  <!-- 🌌 Global Particle Background -->
+  <canvas id="particles"></canvas>
+
   <!-- Header -->
   <header>
     <div class="container">
-      <div class="upper-left-text"><span class="text-primary">{SyncShield}</span></div>
+      <div class="upper-left-text">
+        <span class="text-primary">{SyncShield}</span>
+      </div>
       <nav>
         <ul>
           <li><a href="#hero">Home</a></li>
@@ -30,13 +36,18 @@
   </header>
 
   <!-- Hero -->
-  <section id="hero" class="section bg-dark">
-    <div class="container">
+  <section id="hero" class="section hero-main">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
       <h1 class="text-primary">{SyncShield}</h1>
-      <p class="text-light">Detect CVE-2018-5764 Vulnerabilities Locally in Rsync Commands</p>
+      <p class="text-light">
+        Detect CVE-2018-5764 Vulnerabilities Locally in Rsync Commands
+      </p>
       <a href="#install" class="btn btn-primary">Install Extension</a>
     </div>
   </section>
+
+
 
   <!-- Rsync Section -->
   <section id="rsync" class="section bg-light">
@@ -90,7 +101,7 @@
   <!-- Features Section -->
 <section id="features" class="section bg-dark">
   <div class="container">
-    <h2 class="text-center text-primary">✨ Key Features</h2>
+    <h2 class="text-center text-primary">Key Features</h2>
     <p class="text-light text-center">All-in-one Rsync security assistant — detect, analyze, and secure your commands instantly.</p>
 
     <div class="feature-grid">
@@ -131,7 +142,7 @@
 <!-- Installation Guide -->
 <section id="install" class="section bg-light">
   <div class="container">
-    <h2 class="text-center text-primary">🚀 Install SyncShield Extension</h2>
+    <h2 class="text-center text-primary">Install SyncShield Extension</h2>
     <p class="text-light text-center">Get started in minutes — follow these quick setup steps.</p>
 
     <div class="text-center" style="margin-top: 25px; margin-bottom: 40px;">
@@ -163,7 +174,7 @@
       </div>
       <div class="install-card">
         <i class="fas fa-check-circle"></i>
-        <p>✅ The SyncShield icon will now appear in your extensions toolbar!</p>
+        <p> The SyncShield icon will now appear in your extensions toolbar!</p>
       </div>
     </div>
   </div>
@@ -172,7 +183,7 @@
  <!-- === USER GUIDE SECTION (REPLACEMENT) === -->
 <section id="guide" class="section bg-dark">
   <div class="container">
-    <h2 class="text-center text-primary">🧠 Step-by-Step Command Builder Guide</h2>
+    <h2 class="text-center text-primary"> Step-by-Step Command Builder Guide</h2>
     <p class="text-light text-center">
       Learn how SyncShield helps you create secure <code>rsync</code> commands while preventing argument-injection attacks.
     </p>
@@ -207,25 +218,33 @@
         </div>
         <div class="guide-text">
           <h3>3. Select Source and Destination</h3>
-          <p><strong>Source:</strong> <code>/home/kali/Desktop/project/</code><br>
-             <strong>Destination:</strong> <code>user@192.168.1.105:/backup/</code></p>
+          <p><strong>Source:</strong> <code>[Source Path]</code><br>
+             <strong>Destination:</strong> <code>[Username]@[Host's IP]:Destination Path</code></p>
         </div>
       </div>
 
-      <!-- Step 4 -->
-      <div class="guide-card reverse">
-        <div class="guide-text">
-          <h3>4. Choose Security Options</h3>
-          <ul>
-            <li>✅ <code>--protect-args</code> (Prevents argument injection)</li>
-            <li>✅ <code>-avz</code> (Archive, Verbose, Compress)</li>
-            <li>✅ <code>--rsync-path="sudo rsync"</code></li>
-          </ul>
-        </div>
-        <div class="guide-img">
-          <img src="images/step4_flags.png" alt="Security Options">
-        </div>
-      </div>
+     <!-- Step 4 -->
+<div class="guide-card reverse">
+  <div class="guide-text">
+    <h3>4. Choose Security Options</h3>
+    <p>Select Rsync options to enhance performance and security during command building.</p>
+
+    <div class="option-summary">
+      <ul>
+        <li><strong>-a (Archive):</strong> Keeps file structure, permissions, and timestamps.</li>
+        <li><strong>-v (Verbose):</strong> Displays detailed transfer progress in terminal.</li>
+        <li><strong>-z (Compress):</strong> Reduces data size during transfer for speed.</li>
+        <li><strong>--progress:</strong> Shows live transfer updates in real-time.</li>
+        <li><strong>--checksum:</strong> Verifies data integrity to ensure accurate sync.</li>
+        <li><strong>--protect-args:</strong> Prevents command injection by sanitizing filenames.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="guide-img">
+    <img src="images/step4_flags.png" alt="Security Options Overview">
+  </div>
+</div>
+
 
       <!-- Step 5 -->
       <div class="guide-card">
@@ -260,12 +279,6 @@
         </div>
       </div>
     </div>
-
-    <div class="alert-box">
-      <i class="fas fa-lightbulb text-primary"></i>
-      <p><strong>Tip:</strong> Always use <code>--protect-args</code>. Without it, attackers can exploit filenames to inject commands.</p>
-    </div>
-  </div>
 </section>
 
 
@@ -274,17 +287,17 @@
     <div class="container">
       <h2 class="text-center">About Us</h2>
       <div class="team-members">
-        <div class="member-card"><img src="images/paeh.png" alt="MUHAMMAD NUR FAIZ BIN AHMAD FAUZI"/><h3>MUHAMMAD NUR FAIZ BIN AHMAD FAUZI</h3><p>Group Leader & Frontend Developer</p><p>ID: NWS23070251</p></div>
-        <div class="member-card"><img src="images/pip.jpg" alt="WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD"/><h3>WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD</h3><p>Command Scanner Developer</p><p>ID: NWS23070157</p></div>
-        <div class="member-card"><img src="images/waleed.png" alt="WALEED ADAM BIN RIZA FAROUK"/><h3>WALEED ADAM BIN RIZA FAROUK</h3><p>Testing Lead & Documentation Writer</p><p>ID: NWS23070265</p></div>
-        <div class="member-card"><img src="images/lia.jpg" alt="ROSHAZNE ELIA BINTI MOHD ROSHIDI"/><h3>ROSHAZNE ELIA BINTI MOHD ROSHIDI</h3><p>Researcher & Presentation Leader</p><p>ID: NWS23070105</p></div>
+        <div class="member-card"><img src="images/paeh.png" alt="MUHAMMAD NUR FAIZ BIN AHMAD FAUZI"/><h3>MUHAMMAD NUR FAIZ BIN AHMAD FAUZI</h3><p>Project Manager & Testing Lead</p><p>ID: NWS23070251</p></div>
+        <div class="member-card"><img src="images/pip.jpg" alt="WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD"/><h3>WAN MUHAMMAD AFIFUDDIN BIN WAN AHMAD</h3><p>Backend & Functionality Developer</p><p>ID: NWS23070157</p></div>
+        <div class="member-card"><img src="images/waleed.png" alt="WALEED ADAM BIN RIZA FAROUK"/><h3>WALEED ADAM BIN RIZA FAROUK</h3><p>Frontend & UI/UX Developer</p><p>ID: NWS23070265</p></div>
+        <div class="member-card"><img src="images/lia.jpg" alt="ROSHAZNE ELIA BINTI MOHD ROSHIDI"/><h3>ROSHAZNE ELIA BINTI MOHD ROSHIDI</h3><p>Security Analyst & Resource Coordinator</p><p>ID: NWS23070105</p></div>
       </div>
       <div class="project-details">
         <h3>Project Details</h3>
         <p><strong>Supervisor:</strong> Sir Amir Hakeem</p>
         <p><strong>Intake:</strong> July 2023</p>
-        <p><strong>Trade:</strong> CID</p>
-        <p><strong>FYP:</strong> FYP01 NWS129/23B</p>
+        <p><strong>Course:</strong> CID</p>
+        <p><strong>Group:</strong> FYPG3 NWS129/23B</p>
         <p><strong>Objective:</strong> Develop a browser extension that detects CVE-2018-5764 vulnerabilities in Rsync commands.</p>
       </div>
     </div>
@@ -293,7 +306,7 @@
 <!-- Footer -->
 <footer class="bg-dark">
   <div class="container">
-    <p class="text-light">&copy; 2025 SyncShield Team (GMI). All rights reserved.</p>
+    <p class="text-light">&copy; 2025 FYPG3 NWS129/23B (SyncShield Team). All rights reserved.</p>
     <p class="text-light">
       <a href="https://github.com/waleedadam360-web/SyncShield"
          target="_blank"
@@ -315,6 +328,10 @@ document.addEventListener("scroll", () => {
   });
 });
 </script>
+
+<!-- ✅ Load particle animation file properly -->
+<script src="js/particles.js"></script>
+
 </body>
 </html>
 
