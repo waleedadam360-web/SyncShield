@@ -147,6 +147,29 @@ nav a:hover {
   line-height: 1.6;
 }
 
+/* === NETWORK DIAGRAM (RESIZED & CLEANER) === */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  width: 100%;
+}
+
+.image-container img {
+  width: 70%;               /* ✅ Recommended sweet spot */
+  max-width: 700px;         /* Keeps it consistent on large screens */
+  height: auto;             /* Maintains aspect ratio */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(102, 252, 241, 0.3);
+}
+
 /* === RISK GRID === */
 .risk-grid {
   display: grid;
