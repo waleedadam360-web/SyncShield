@@ -429,3 +429,19 @@ footer p {
     transform: translateY(0);
   }
 }
+
+.image-container img {
+  width: 65%;              /* ✅ recommended scale */
+  max-width: 680px;        /* ✅ maintain proportion on desktop */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.image-container img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(102, 252, 241, 0.3);
+}
+
