@@ -63,7 +63,7 @@ SyncShield/
 
 ---
 
-## 🌐 Live Demo (GitHub Pages)
+## 🌐 Official SyncShield Website
 
 [https://syncshield.my](https://syncshield.my)
 
@@ -120,24 +120,25 @@ rsync -av /src user@host:/dest
 Follow these steps to install **SyncShield** in your browser:
 
 1. **Download the Extension**  
-   👉 [Get SyncShield from our website](https://waleedadam360-web.github.io/SyncShield/)
+   [Get SyncShield from our website](https://syncshield.my)
+- (Only download on our website otherwise it'll download outdated extension file)
 
-2. **Extract the Files**  
+3. **Extract the Files**  
    - Unzip the downloaded `.zip` file to a folder on your computer.
 
-3. **Open Browser Extensions Page**  
+4. **Open Browser Extensions Page**  
    - **Chrome / Edge / Brave** → Go to `chrome://extensions/`  
    - **Firefox** → Go to `about:debugging#/runtime/this-firefox`
 
-4. **Enable Developer Mode**  
+5. **Enable Developer Mode**  
    - *Chrome/Edge/Brave*: Toggle the switch at the top-right.  
    - *Firefox*: No toggle required.
 
-5. **Load the Extension**  
+6. **Load the Extension**  
    - *Chrome/Edge/Brave*: Click **Load unpacked** → Select the unzipped SyncShield folder.  
    - *Firefox*: Click **Load Temporary Add-on** → Select the `manifest.json` file inside the SyncShield folder.
 
-6. **Installation Complete 🎉**  
+7. **Installation Complete 🎉**  
    - SyncShield will now appear in your extensions list and browser toolbar.
 
 ---
