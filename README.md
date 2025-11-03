@@ -7,7 +7,7 @@
 
 > **Detect unsafe Rsync commands before they become exploits**
 
-A lightweight, privacy-focused browser extension developed as part of **Final Year Project (FYP01) NWS/129/23B** to detect missing `--protect-args` flag in Rsync commands — preventing remote command execution via **CVE-2018-5764**.
+A lightweight, privacy-focused browser extension developed as part of **Final Year Project NWS/129/23B** to detect missing `--protect-args` flag in Rsync commands — preventing remote command execution via **CVE-2018-5764**.
 
 ✅ Works entirely offline  
 ✅ No server connections or data collection  
