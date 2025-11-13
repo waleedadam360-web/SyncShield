@@ -190,16 +190,44 @@ SyncShield helps by:
 - Click **⚡ Build Secure Command** to auto-generate a safe version.
 
 ### 4. Scan with Remote Server (Optional)
-- Validate with a remote host (optional). *(This feature may require additional setup such as a URL and an access token — only use with trusted hosts.)*
+- Validate with a remote host (optional).  
+- *(This feature requires a URL + token — only use with trusted servers.)*
 
 ### 5. Review the Results
-- After scanning, review:  
+- After scanning, you can review:  
   - Whether the command is **Safe** or **Unsafe**  
-  - Warnings, explanations, and the impact summary  
-  - Suggested fixes and a **Suggested Safe Command**  
+  - Warnings, explanations, and impact summary  
+  - Suggested fixes  
+  - A **Suggested Safe Command**  
 - Actions available:  
-  - **Copy** the secure command to clipboard  
-  - **Export** the scan results as a file for documentation
+  - **Copy Fix** → copies the safe version  
+  - **Export Results** → saves a JSON report  
+
+---
+
+### 6. Real-Time Command Visualization
+SyncShield includes a **live visual diagram** that updates as you type.  
+It shows:
+
+- **Source → Destination**  
+- **Transfer direction**  
+- **Color-coded safety level**  
+- **Automatic updates on every keystroke**
+
+This helps prevent reversed paths, accidental overwrites, or unsafe behavior by making the command’s behavior visually clear.
+
+---
+
+### 7. Dashboard Summary
+The **Dashboard** tab gives you a quick overview of your last scan, including:
+
+- 🟢 **Secure** or 🔴 **Unsafe** status  
+- ⚠️ **Risk level** (Low / Medium / High)  
+- 🕒 **Timestamp** of the scan  
+- 💬 **Full command preview**  
+- 🧭 **Mini visualization** of the Source → Destination flow  
+
+This makes it easy to revisit your last analyzed command, even after closing the extension.
 
 ---
 
