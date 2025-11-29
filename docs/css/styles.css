@@ -507,7 +507,7 @@ footer p {
 .video-promo-wrapper {
   position: relative;
   width: 100%;
-  max-width: 900px; /* Large cinematic size */
+  max-width: 1500px; /* Large cinematic size */
   margin: 0 auto;   /* Centers the box */
   
   /* Force 16:9 Aspect Ratio (YouTube Standard) */
