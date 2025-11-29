@@ -10,13 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
 </head>
 <body>
-  <!-- 🌌 Global Particle Background -->
   <canvas id="particles"></canvas>
 
-  <!-- Header -->
   <header>
     <div class="container">
       <div class="upper-left-text">
@@ -25,7 +22,7 @@
       <nav>
         <ul>
           <li><a href="#hero">Home</a></li>
-          <li><a href="#rsync">Rsync & CVE</a></li>
+          <li><a href="#demo-video">Demo</a></li> <li><a href="#rsync">Rsync & CVE</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#install">Install</a></li>
           <li><a href="#guide">User Guide</a></li>
@@ -35,7 +32,6 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <section id="hero" class="section hero-main">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -47,11 +43,29 @@
     </div>
   </section>
 
-
-
-  <!-- Rsync Section -->
-  <section id="rsync" class="section bg-light">
+  <section id="demo-video" class="section bg-light" style="padding: 6rem 0;">
     <div class="container">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <h2 class="text-primary" style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 1rem;">
+          See SyncShield in Action
+        </h2>
+        <p class="text-light" style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">
+          Watch how SyncShield detects unsafe commands and secures your data transfer in real-time.
+        </p>
+      </div>
+
+      <div class="video-promo-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/gTfyXMZB_98?si=eBFkh4PAMBrzfcxM" 
+          title="SyncShield Promotional Video" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+  <section id="rsync" class="section bg-dark"> <div class="container">
       <h2 class="text-center text-primary">Rsync & CVE-2018-5764</h2>
       <p class="text-light text-center">Understand how Rsync works — and why missing <code>--protect-args</code> can lead to remote command execution.</p>
 
@@ -98,192 +112,179 @@
     </div>
   </section>
 
-  <!-- Features Section -->
-<section id="features" class="section bg-dark">
-  <div class="container">
-    <h2 class="text-center text-primary">Key Features</h2>
-    <p class="text-light text-center">All-in-one Rsync security assistant — detect, analyze, and secure your commands instantly.</p>
+  <section id="features" class="section bg-light"> <div class="container">
+      <h2 class="text-center text-primary">Key Features</h2>
+      <p class="text-light text-center">All-in-one Rsync security assistant — detect, analyze, and secure your commands instantly.</p>
 
-    <div class="feature-grid">
-      <div class="feature-item">
-        <i class="fas fa-shield-alt"></i>
-        <h3>Rsync Argument Analyzer</h3>
-        <p>Scans for missing <code>--protect-args</code> and other risky syntax.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-bug"></i>
-        <h3>Unsafe Input Detection</h3>
-        <p>Identifies shell-injectable patterns in user commands.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-bell"></i>
-        <h3>Real-Time Alerts</h3>
-        <p>Notifies you instantly when unsafe parameters are detected.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-tools"></i>
-        <h3>Mitigation Guidance</h3>
-        <p>Shows clear fixes and secure examples for each issue.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-download"></i>
-        <h3>Offline Usage</h3>
-        <p>Runs locally without Internet — full privacy guaranteed.</p>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-user-friends"></i>
-        <h3>User-Friendly Interface</h3>
-        <p>Clean and intuitive dashboard for quick command checks.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Installation Guide -->
-<section id="install" class="section bg-light">
-  <div class="container">
-    <h2 class="text-center text-primary">Install SyncShield Extension</h2>
-    <p class="text-light text-center">Get started in minutes — follow these quick setup steps.</p>
-
-    <div class="text-center" style="margin-top: 25px; margin-bottom: 40px;">
-      <a href="https://github.com/waleedadam360-web/SyncShield/releases/latest/download/SyncShield_v1.5.zip" class="btn btn-primary install-btn">
-        <i class="fas fa-download"></i> Download SyncShield (.zip)
-      </a>
-    </div>
-
-    <div class="install-steps">
-      <div class="install-card">
-        <i class="fas fa-file-archive"></i>
-        <p>Download the <strong>SyncShield Extension</strong> using the button above.</p>
-      </div>
-      <div class="install-card">
-        <i class="fas fa-folder-open"></i>
-        <p>Unzip the downloaded file into a folder on your computer.</p>
-      </div>
-      <div class="install-card">
-        <i class="fas fa-browser"></i>
-        <p>Open your browser (Chrome / Edge / Brave).</p>
-      </div>
-      <div class="install-card">
-        <i class="fas fa-cogs"></i>
-        <p>Go to <code>chrome://extensions/</code> and enable <strong>Developer Mode</strong>.</p>
-      </div>
-      <div class="install-card">
-        <i class="fas fa-upload"></i>
-        <p>Click <strong>Load unpacked</strong> and select the extracted folder.</p>
-      </div>
-      <div class="install-card">
-        <i class="fas fa-check-circle"></i>
-        <p> The SyncShield icon will now appear in your extensions toolbar!</p>
-      </div>
-    </div>
-  </div>
-</section>
-
- <!-- === USER GUIDE SECTION (REPLACEMENT) === -->
-<section id="guide" class="section bg-dark">
-  <div class="container">
-    <h2 class="text-center text-primary"> Step-by-Step Command Builder Guide</h2>
-    <p class="text-light text-center">
-      Learn how SyncShield helps you create secure <code>rsync</code> commands while preventing argument-injection attacks.
-    </p>
-
-    <div class="guide-horizontal">
-      <!-- Step 1 -->
-      <div class="guide-card">
-        <div class="guide-img">
-          <img src="images/step1_launch.png" alt="Launch Extension">
+      <div class="feature-grid">
+        <div class="feature-item">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Rsync Argument Analyzer</h3>
+          <p>Scans for missing <code>--protect-args</code> and other risky syntax.</p>
         </div>
-        <div class="guide-text">
-          <h3>1. Launch the Extension</h3>
-          <p>Click the <strong>SyncShield icon</strong> in your browser toolbar to open the main dashboard.</p>
+        <div class="feature-item">
+          <i class="fas fa-bug"></i>
+          <h3>Unsafe Input Detection</h3>
+          <p>Identifies shell-injectable patterns in user commands.</p>
         </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="guide-card reverse">
-        <div class="guide-text">
-          <h3>2. Open the Command Builder</h3>
-          <p>Go to the <strong>Command Builder</strong> tab to safely create your <code>rsync</code> command.</p>
+        <div class="feature-item">
+          <i class="fas fa-bell"></i>
+          <h3>Real-Time Alerts</h3>
+          <p>Notifies you instantly when unsafe parameters are detected.</p>
         </div>
-        <div class="guide-img">
-          <img src="images/step2_builder.png" alt="Command Builder Interface">
+        <div class="feature-item">
+          <i class="fas fa-tools"></i>
+          <h3>Mitigation Guidance</h3>
+          <p>Shows clear fixes and secure examples for each issue.</p>
         </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="guide-card">
-        <div class="guide-img">
-          <img src="images/step3_source.png" alt="Source and Destination">
+        <div class="feature-item">
+          <i class="fas fa-download"></i>
+          <h3>Offline Usage</h3>
+          <p>Runs locally without Internet — full privacy guaranteed.</p>
         </div>
-        <div class="guide-text">
-          <h3>3. Select Source and Destination</h3>
-          <p><strong>Source:</strong> <code>[Source Path]</code><br>
-             <strong>Destination:</strong> <code>[Username]@[Host's IP]:Destination Path</code></p>
-        </div>
-      </div>
-
-     <!-- Step 4 -->
-<div class="guide-card reverse">
-  <div class="guide-text">
-    <h3>4. Choose Security Options</h3>
-    <p>Select Rsync options to enhance performance and security during command building.</p>
-
-    <div class="option-summary">
-      <ul>
-        <li><strong>-a (Archive):</strong> Keeps file structure, permissions, and timestamps.</li>
-        <li><strong>-v (Verbose):</strong> Displays detailed transfer progress in terminal.</li>
-        <li><strong>-z (Compress):</strong> Reduces data size during transfer for speed.</li>
-        <li><strong>--progress:</strong> Shows live transfer updates in real-time.</li>
-        <li><strong>--checksum:</strong> Verifies data integrity to ensure accurate sync.</li>
-        <li><strong>--protect-args:</strong> Prevents command injection by sanitizing filenames.</li>
-      </ul>
-    </div>
-  </div>
-  <div class="guide-img">
-    <img src="images/step4_flags.png" alt="Security Options Overview">
-  </div>
-</div>
-
-
-      <!-- Step 5 -->
-      <div class="guide-card">
-        <div class="guide-img">
-          <img src="images/step5_preview.png" alt="Preview Command">
-        </div>
-        <div class="guide-text">
-          <h3>5. Build and Preview the Command</h3>
-          <pre class="code-block"><code>rsync -avz --protect-args /home/kali/Desktop/project/ user@192.168.1.105:/backup/</code></pre>
-        </div>
-      </div>
-
-      <!-- Step 6 -->
-      <div class="guide-card reverse">
-        <div class="guide-text">
-          <h3>6. Copy or Execute Securely</h3>
-          <p>Once verified, copy the command or send it to the backend for safe execution.</p>
-        </div>
-        <div class="guide-img">
-          <img src="images/step6_copy.png" alt="Copy Secure Command">
-        </div>
-      </div>
-
-      <!-- Step 7 -->
-      <div class="guide-card">
-        <div class="guide-img">
-          <img src="images/step7_alert.png" alt="Security Alert Example">
-        </div>
-        <div class="guide-text">
-          <h3>7. Receive Security Alerts</h3>
-          <p>If a dangerous pattern or missing flag is detected, you’ll receive a real-time alert in the GUI.</p>
+        <div class="feature-item">
+          <i class="fas fa-user-friends"></i>
+          <h3>User-Friendly Interface</h3>
+          <p>Clean and intuitive dashboard for quick command checks.</p>
         </div>
       </div>
     </div>
-</section>
+  </section>
 
+  <section id="install" class="section bg-dark">
+    <div class="container">
+      <h2 class="text-center text-primary">Install SyncShield Extension</h2>
+      <p class="text-light text-center">Get started in minutes — follow these quick setup steps.</p>
 
-  <!-- About -->
-  <section id="about" class="section bg-light">
+      <div class="text-center" style="margin-top: 25px; margin-bottom: 40px;">
+        <a href="https://github.com/waleedadam360-web/SyncShield/releases/latest/download/SyncShield_v1.5.zip" class="btn btn-primary install-btn">
+          <i class="fas fa-download"></i> Download SyncShield (.zip)
+        </a>
+      </div>
+
+      <div class="install-steps">
+        <div class="install-card">
+          <i class="fas fa-file-archive"></i>
+          <p>Download the <strong>SyncShield Extension</strong> using the button above.</p>
+        </div>
+        <div class="install-card">
+          <i class="fas fa-folder-open"></i>
+          <p>Unzip the downloaded file into a folder on your computer.</p>
+        </div>
+        <div class="install-card">
+          <i class="fas fa-browser"></i>
+          <p>Open your browser (Chrome / Edge / Brave).</p>
+        </div>
+        <div class="install-card">
+          <i class="fas fa-cogs"></i>
+          <p>Go to <code>chrome://extensions/</code> and enable <strong>Developer Mode</strong>.</p>
+        </div>
+        <div class="install-card">
+          <i class="fas fa-upload"></i>
+          <p>Click <strong>Load unpacked</strong> and select the extracted folder.</p>
+        </div>
+        <div class="install-card">
+          <i class="fas fa-check-circle"></i>
+          <p> The SyncShield icon will now appear in your extensions toolbar!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="section bg-light">
+    <div class="container">
+      <h2 class="text-center text-primary"> Step-by-Step Command Builder Guide</h2>
+      <p class="text-light text-center">
+        Learn how SyncShield helps you create secure <code>rsync</code> commands while preventing argument-injection attacks.
+      </p>
+
+      <div class="guide-horizontal">
+        <div class="guide-card">
+          <div class="guide-img">
+            <img src="images/step1_launch.png" alt="Launch Extension">
+          </div>
+          <div class="guide-text">
+            <h3>1. Launch the Extension</h3>
+            <p>Click the <strong>SyncShield icon</strong> in your browser toolbar to open the main dashboard.</p>
+          </div>
+        </div>
+
+        <div class="guide-card reverse">
+          <div class="guide-text">
+            <h3>2. Open the Command Builder</h3>
+            <p>Go to the <strong>Command Builder</strong> tab to safely create your <code>rsync</code> command.</p>
+          </div>
+          <div class="guide-img">
+            <img src="images/step2_builder.png" alt="Command Builder Interface">
+          </div>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-img">
+            <img src="images/step3_source.png" alt="Source and Destination">
+          </div>
+          <div class="guide-text">
+            <h3>3. Select Source and Destination</h3>
+            <p><strong>Source:</strong> <code>[Source Path]</code><br>
+               <strong>Destination:</strong> <code>[Username]@[Host's IP]:Destination Path</code></p>
+          </div>
+        </div>
+
+        <div class="guide-card reverse">
+          <div class="guide-text">
+            <h3>4. Choose Security Options</h3>
+            <p>Select Rsync options to enhance performance and security during command building.</p>
+
+            <div class="option-summary">
+              <ul>
+                <li><strong>-a (Archive):</strong> Keeps file structure, permissions, and timestamps.</li>
+                <li><strong>-v (Verbose):</strong> Displays detailed transfer progress in terminal.</li>
+                <li><strong>-z (Compress):</strong> Reduces data size during transfer for speed.</li>
+                <li><strong>--progress:</strong> Shows live transfer updates in real-time.</li>
+                <li><strong>--checksum:</strong> Verifies data integrity to ensure accurate sync.</li>
+                <li><strong>--protect-args:</strong> Prevents command injection by sanitizing filenames.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="guide-img">
+            <img src="images/step4_flags.png" alt="Security Options Overview">
+          </div>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-img">
+            <img src="images/step5_preview.png" alt="Preview Command">
+          </div>
+          <div class="guide-text">
+            <h3>5. Build and Preview the Command</h3>
+            <pre class="code-block"><code>rsync -avz --protect-args /home/kali/Desktop/project/ user@192.168.1.105:/backup/</code></pre>
+          </div>
+        </div>
+
+        <div class="guide-card reverse">
+          <div class="guide-text">
+            <h3>6. Copy or Execute Securely</h3>
+            <p>Once verified, copy the command or send it to the backend for safe execution.</p>
+          </div>
+          <div class="guide-img">
+            <img src="images/step6_copy.png" alt="Copy Secure Command">
+          </div>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-img">
+            <img src="images/step7_alert.png" alt="Security Alert Example">
+          </div>
+          <div class="guide-text">
+            <h3>7. Receive Security Alerts</h3>
+            <p>If a dangerous pattern or missing flag is detected, you’ll receive a real-time alert in the GUI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section bg-dark">
     <div class="container">
       <h2 class="text-center">About Us</h2>
       <div class="team-members">
@@ -303,35 +304,31 @@
     </div>
   </section>
 
-<!-- Footer -->
-<footer class="bg-dark">
-  <div class="container">
-    <p class="text-light">&copy; 2025 FYPG3 NWS129/23B (SyncShield Team). All rights reserved.</p>
-    <p class="text-light">
-      <a href="https://github.com/waleedadam360-web/SyncShield"
-         target="_blank"
-         style="color:#66FCF1;text-decoration:none;">
-        <i class="fab fa-github"></i> View Source on GitHub
-      </a>
-    </p>
-  </div>
-</footer>
+  <footer class="bg-dark">
+    <div class="container">
+      <p class="text-light">&copy; 2025 FYPG3 NWS129/23B (SyncShield Team). All rights reserved.</p>
+      <p class="text-light">
+        <a href="https://github.com/waleedadam360-web/SyncShield"
+           target="_blank"
+           style="color:#66FCF1;text-decoration:none;">
+          <i class="fab fa-github"></i> View Source on GitHub
+        </a>
+      </p>
+    </div>
+  </footer>
 
-<!-- Scroll Animation Script -->
-<script>
-document.addEventListener("scroll", () => {
-  const cards = document.querySelectorAll(".guide-card");
-  const trigger = window.innerHeight * 0.85;
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if (top < trigger) card.classList.add("show");
+  <script>
+  document.addEventListener("scroll", () => {
+    const cards = document.querySelectorAll(".guide-card");
+    const trigger = window.innerHeight * 0.85;
+    cards.forEach(card => {
+      const top = card.getBoundingClientRect().top;
+      if (top < trigger) card.classList.add("show");
+    });
   });
-});
-</script>
+  </script>
 
-<!-- ✅ Load particle animation file properly -->
-<script src="css/particles.js"></script>
+  <script src="css/particles.js"></script>
 
 </body>
 </html>
-
